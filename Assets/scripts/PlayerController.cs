@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxFallSpeed;
     [SerializeField] float fallAccleration;
 
-    [SerializeField] MeatCollector meatCollector;
 
     public bool IsUsingAbility { get; set; }
 
@@ -52,7 +51,6 @@ public class PlayerController : MonoBehaviour
 
 
     int lastPlayerDirection = 1;
-    private MovingPlatform _platform;
 
 
     private void OnEnable()
@@ -61,7 +59,6 @@ public class PlayerController : MonoBehaviour
         jumpInput.action.Enable();
         moveInput.action.Enable();
 
-        meatCollector.OnCollectMaxMeatnumb += () => canUlt = true;
     }
 
 
@@ -70,9 +67,6 @@ public class PlayerController : MonoBehaviour
         moveInput.action.Disable();
         jumpInput.action.Disable();
         jumpInput.action.performed -= OnJumpEvent;
-
-        meatCollector.OnCollectMaxMeatnumb -= () => canUlt = true;
-
     }
 
 
@@ -87,14 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        if (_platform != null)
-        {
-            rb.velocity = velocity + _platform.GetCurrentSpeed();
-        }
-        else
-        {
-            rb.velocity = velocity;
-        }
+        rb.velocity = velocity;
     }
 
     void Jump()
@@ -186,7 +173,6 @@ public class PlayerController : MonoBehaviour
     public void UseUltimate()
     {
         canUlt = false;
-        meatCollector.SpendMeat();
     }
 
     private void OnJumpEvent(InputAction.CallbackContext obj)
@@ -221,8 +207,4 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawSphere(transform.position + cellingOffset, rad);
     }
 #endif
-    public void SetPlatForm(MovingPlatform movingPlatform)
-    {
-        _platform = movingPlatform;
-    }
 }
