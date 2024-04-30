@@ -104,7 +104,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 142560854410502076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a246b56b54f1f7740bf46ad93d7efd33, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a783ac597a3f424793e035182a8a0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tag: Player
@@ -119,8 +119,8 @@ GameObject:
   - component: {fileID: 2419669584348293627}
   - component: {fileID: 166192407258341382}
   - component: {fileID: 2680663741199314516}
-  - component: {fileID: 4157903003792560608}
   - component: {fileID: 2852356411838973795}
+  - component: {fileID: 4610435000065417372}
   m_Layer: 0
   m_Name: rock
   m_TagString: Untagged
@@ -240,18 +240,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 1.64}
   m_EdgeRadius: 0
---- !u!114 &4157903003792560608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8653490546340037862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 257e17e13a6b43645867ca20b08c71b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2852356411838973795
 Rigidbody2D:
   serializedVersion: 4
@@ -279,3 +267,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4610435000065417372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653490546340037862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72869a723160cb408e8577be1f4fc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,6 +6,7 @@ public class Portal : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] GameObject window;
+    [SerializeField] int scene;
 
 
 
@@ -22,7 +23,7 @@ public class Portal : MonoBehaviour
         anim.CrossFadeInFixedTime("Open", .2f);
         yield return new WaitForSeconds(2);
         window.SetActive(true);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(scene);
 
     }
 }
