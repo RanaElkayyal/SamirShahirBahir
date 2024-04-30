@@ -21,14 +21,14 @@ public class PlayerVisuals : MonoBehaviour
     {
         player.OnJump += OnPlayerJump;
         player.OnGroundChange += OnGroundChange;
-        moveParticle.Play();
+        if (moveParticle) moveParticle.Play();
     }
 
     private void OnDisable()
     {
         player.OnJump -= OnPlayerJump;
         player.OnGroundChange -= OnGroundChange;
-        moveParticle.Stop();
+        if (moveParticle) moveParticle.Stop();
     }
 
 
@@ -61,7 +61,7 @@ public class PlayerVisuals : MonoBehaviour
         if (audioSource == null) return;
         audioSource.clip = jumpClip;
         audioSource.Play();
-        jumpParticle.Play();
+        if (jumpParticle) jumpParticle.Play();
     }
     private void OnGroundChange(bool isGrounded)
     {
@@ -70,14 +70,14 @@ public class PlayerVisuals : MonoBehaviour
         if (isGrounded)
         {
             animator.SetBool("IsGrounded", true);
-            moveParticle.Play();
-            landParticle.Play();
+            if (moveParticle) moveParticle.Play();
+            if (landParticle) landParticle.Play();
         }
         else
         {
             animator.SetBool("IsGrounded", false);
-            moveParticle.Stop();
-            landParticle.Stop();
+            if (moveParticle) moveParticle.Stop();
+            if (landParticle) landParticle.Stop();
         }
     }
 }

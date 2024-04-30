@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Rana/Scenes/Shahir level 1 (Samir Shahir bahir).unity
+    guid: d80f3ea46177e0f4c8c39dceeb1173d4
   m_configObjects: {}
